@@ -22,7 +22,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 SPREADSHEET_ID = '-----------ID of GOOGLE SHEET-----------'
 
 creds = None
-# The file token.pickle stores the user's access and refresh tokens, and is
+# The file sheet-token.pickle stores the user's access and refresh tokens, and is
 # created automatically when the authorization flow completes for the first
 # time.
 try:
@@ -56,6 +56,7 @@ values = result.get('values', [])
 df = pd.DataFrame(values[1:], columns=values[0])
 df.columns = ['DashboardName','Token','FilterName','FilterValue','Time','Message']
 
+#Get current machine time to check with schedule
 today = datetime.now()
 theHour = today.hour
 print(str(theHour))
