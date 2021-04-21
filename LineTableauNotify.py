@@ -46,7 +46,8 @@ except:
 
 service = build('sheets', 'v4', credentials=creds)
 
-RANGE_NAME = 'Sheet1!A:F'
+#Modify Sheet Range with the range of your data
+RANGE_NAME = 'Sheet1!A:F' 
 
 # Call the Sheets API
 sheet = service.spreadsheets()
